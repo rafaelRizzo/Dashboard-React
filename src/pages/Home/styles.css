@@ -77,6 +77,103 @@
     color: #5D5B77;
 }
 
+/*  */
+
+.container-mid {
+    display: flex;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.container-mid .historico-empresa {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.container-mid .historico-empresa .card {
+    margin-bottom: 10px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.container-mid .historico-empresa .card .content-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.container-mid .historico-empresa .card .porcentagem.minus,
+.container-mid .historico-empresa .card .porcentagem.more {
+    text-align: center;
+    min-width: 50px;
+    padding: 5px 10px;
+    border-radius: 20px;
+
+}
+
+.container-mid .historico-empresa .card .porcentagem.minus {
+    background-color: rgba(220, 20, 60, .2);
+}
+
+.container-mid .historico-empresa .card .porcentagem.more {
+    background-color: rgba(0, 206, 0, .2)
+}
+
+.container-mid .grafico-diario {
+    width: 100%;
+    min-height: 290px;
+    max-height: 290px;
+}
+
+.container-mid .grafico-diario .card {
+    height: 100%;
+}
+
+.bg-grafico {
+    min-width: 500px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 1200px) {

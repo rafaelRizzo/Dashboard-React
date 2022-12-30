@@ -78,6 +78,7 @@
 .navbar ul a.contratos::before,
 .navbar ul a.settings::before,
 .navbar ul a.logout::before {
+    display: none;
     content: "";
     font-size: 16px;
     min-width: 100%;
@@ -134,6 +135,7 @@
 .navbar ul a.contratos:hover::before,
 .navbar ul a.settings:hover::before,
 .navbar ul a.logout:hover::before {
+    display: inline-block;
     opacity: 1;
 }
 
