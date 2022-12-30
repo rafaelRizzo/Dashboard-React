@@ -135,11 +135,61 @@
     transition: all .2s ease;
 }
 
-.container-bot {
-    min-height: 100%;
+.container-bot .card {
+    display: flex;
+    max-height: 20vh;
+    padding: 15px 20px;
+    overflow-y: scroll;
+}
+
+.container-bot .card h2 {
+    font-size: 20px;
+}
+
+.container-bot .card table {
+    width: 100%;
+    font-size: 14px;
+}
+
+.container-bot .card table tbody tr,
+.container-bot .card table thead th {
+    text-align: center;
+}
+
+.p-row {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.row-title-table {
+    background-color: rgba(111, 106, 248, .9);
+    color: #FFF;
+}
+
+.row-table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-table:nth-child(even) {
+    background-color: #E9ECF4;
+    transition: background-color .15s ease;
+}
+
+.row-table:hover {
+    background-color: #d9dfeb;
 }
 
 
+.d-flex {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    justify-content: space-between;
+    display: flex;
+}
 
 @media (max-width: 1200px) {
     .grid-cards {
@@ -169,9 +219,11 @@
     }
 
     .container-mid .historico-empresa .card {
-        display: none;
-        min-width: 100%;
         max-width: 100%;
+    }
+
+    .row-table{
+        flex-direction: column;
     }
 }
 

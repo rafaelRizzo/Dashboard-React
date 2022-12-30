@@ -1,35 +1,73 @@
-import React, { useEffect, useState } from "react";
+import axios from "axios"
 
-import { MdOutlineBusiness } from "react-icons/md";
-import { BiDotsVerticalRounded } from "react-icons/bi";
-import { FaHandshake } from "react-icons/fa";
-import { MdCloudUpload } from "react-icons/md";
-import { FaMoneyBillWave } from "react-icons/fa";
+import React, { useEffect, useState } from "react"
 
-import { Chart } from "react-google-charts";
+import { MdOutlineBusiness } from "react-icons/md"
+import { BiDotsVerticalRounded } from "react-icons/bi"
+import { FaHandshake } from "react-icons/fa"
+import { MdCloudUpload } from "react-icons/md"
+import { FaMoneyBillWave } from "react-icons/fa"
 
+import { Chart } from "react-google-charts"
 
 export const data = [
-    ["Ano", "Ligações"],
-    ["2019", 500],
-    ["2020", 650],
-    ["2021", 1200],
-    ["2022", 900],
-];
-
+    ["Mês", "Ligações"],
+    ["Jan", 500],
+    ["Fev", 1000],
+    ["Mar", 2000],
+    ["Abr", 4000],
+    ["Mai", 6000],
+    ["Jun", 8000],
+    ["Jul", 4000],
+    ["Ago", 1000],
+    ["Set", 4000],
+    ["Out", 7000],
+    ["Nov", 5000],
+    ["Dez", 10000],
+]
 
 export const options = {
     title: "Ligações por ano",
     curveType: "function",
     legend: { position: "bottom" },
     backgroundColor: 'transparent',
-};
-
+}
 
 import "./styles.css"
 
 export const Home = () => {
 
+    const [datas, setDatas] = useState([])
+    const [users, setUsers] = useState([])
+
+    const getDatas = async () => {
+        try {
+            const response = await axios.get("https://jsonplaceholder.typicode.com/users")
+
+            const datas = response.data
+            console.log(datas)
+            setDatas(datas)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const getUsers = async () => {
+        try {
+            const response = await axios.get("https://jsonplaceholder.typicode.com/posts")
+
+            const users = response.data
+            console.log(users)
+            setUsers(users)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getDatas()
+        getUsers()
+    }, [])
 
     return (
         <>
@@ -42,7 +80,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="content-card">
-                        <h3>ABC TELECOM</h3>
+                        <h3> ABC TELECOM </h3>
                     </div>
                 </div>
 
@@ -54,8 +92,8 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="content-card">
-                        <h2>10000</h2>
-                        <small>Atendimentos contratados por mês</small>
+                        <h2> 10000 </h2>
+                        <small> Atendimentos contratados por mês </small>
                     </div>
                 </div>
 
@@ -67,8 +105,8 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="content-card">
-                        <h2>10000</h2>
-                        <small>Atendimentos usados esse mês</small>
+                        <h2> 10000 </h2>
+                        <small> Atendimentos usados esse mês </small>
                     </div>
                 </div>
 
@@ -80,8 +118,8 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="content-card">
-                        <h2>R$800.000,00</h2>
-                        <small>Total para pagamento mensalidade + excedente</small>
+                        <h2> R$123.456,00 </h2>
+                        <small> Total para pagamento mensalidade + excedente </small>
                     </div>
                 </div>
             </div>
@@ -90,20 +128,20 @@ export const Home = () => {
                     <div className="historico-empresa">
                         <div className="card">
                             <div className="header-card">
-                                <h2>Mês atual</h2>
+                                <h2> Mês atual </h2>
                             </div>
                             <div className="content-card">
-                                <h1>10000</h1>
-                                <div className="porcentagem minus">~ 33%</div>
+                                <h1>{datas.length === 0 ? 'Carregando' : datas.length}</h1>
+                                <div className="porcentagem minus"> ?% </div>
                             </div>
                         </div>
                         <div className="card">
                             <div className="header-card">
-                                <h2>Mês anterior</h2>
+                                <h2> Mês anterior </h2>
                             </div>
                             <div className="content-card">
-                                <h1>15000</h1>
-                                <div className="porcentagem more">~ 33%</div>
+                                <h1> {users.length === 0 ? 'Carregando' : users.length} </h1>
+                                <div className="porcentagem more"> ?% </div>
                             </div>
                         </div>
                     </div>
@@ -121,8 +159,27 @@ export const Home = () => {
                 </div>
 
                 <div className="container-bot">
-                    <div className="">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eaque provident, minus architecto quas enim nam debitis, quae nesciunt aliquid asperiores porro praesentium similique harum iste ab impedit tempore voluptate!
+                    <div className="card">
+                        <h2> Últimos atendimentos </h2>
+                        <div className="container-ultimos-atendimentos">
+                            <div className="d-flex row-title-table">
+                                <div className="p-row"> Empresa </div>
+                                <div className="p-row"> Contato </div>
+                                <div className="p-row"> Atendente </div>
+                                <div className="p-row"> Data </div>
+                            </div>
+                            {datas.length === 0 ? 'Carregando' : (
+                                datas.map((e, index) => (
+                                    <div className="d-flex row-table" key={index}>
+                                        <div className="p-row"> ABC TELECOM </div>
+                                        <div className="p-row"> {e.name} </div>
+                                        <div className="p-row"> {e.phone} </div>
+                                        <div className="p-row"> 30/12/22 12:34</div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+
                     </div>
                 </div>
             </div>

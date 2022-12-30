@@ -13,12 +13,22 @@ import { Logout } from './pages/Logout/Logout';
 import { NotFound } from './pages/NotFound/NotFound';
 import { BoasVindas } from './components/BoasVindas/BoasVindas';
 
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
 function App() {
 
   return (
     <div className="container">
       <div className="container-left">
-        <BoasVindas />
+        <div className="navigation">
+          <BoasVindas />
+          <div className="arrows-nav">
+          <MdKeyboardArrowLeft />
+          <MdKeyboardArrowRight />
+          </div>
+   
+        </div>
         <Navbar />
         <main>
           <Routes>
@@ -35,7 +45,7 @@ function App() {
         </main>
       </div>
       <div className="container-right">
-        
+
         <h1>Teste</h1>
       </div>
 

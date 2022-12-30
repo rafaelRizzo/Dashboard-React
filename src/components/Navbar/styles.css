@@ -93,7 +93,7 @@
     text-shadow: 0 0 2px rgba(0, 0, 0, .5);
     padding: 5px;
     opacity: 0;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     text-align: center;
     transition: all 0.2s ease;
 }
@@ -139,12 +139,6 @@
     opacity: 1;
 }
 
-
-
-
-
-
-
 @media (max-height: 600px) {
     .navbar {
         min-width: calc(100vw - 20px);
@@ -154,7 +148,6 @@
         right: 10px;
         right: 0;
         bottom: auto;
-        overflow: hidden;
     }
 
     .navbar .logo {
@@ -173,6 +166,7 @@
         top: auto;
         bottom: 0;
         width: 100%;
+        margin: 0 auto;
         height: 0%;
     }
 
@@ -187,6 +181,20 @@
         height: 5px;
         opacity: 1;
     }
+
+    .navbar ul a.dashboard::before,
+    .navbar ul a.helpdesk::before,
+    .navbar ul a.voip::before,
+    .navbar ul a.financeiro::before,
+    .navbar ul a.contratos::before,
+    .navbar ul a.settings::before,
+    .navbar ul a.logout::before{
+        right: auto;
+        bottom: 0;
+        transform: translateY(50px);
+        border-radius: 10px;
+        z-index: 9999;
+    }
 }
 
 @media (max-width: 1025px) {
@@ -198,7 +206,6 @@
         right: 10px;
         right: 0;
         bottom: auto;
-        overflow: hidden;
     }
 
     .navbar .logo {

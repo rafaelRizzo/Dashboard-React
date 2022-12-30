@@ -6,8 +6,27 @@
     overflow: hidden;
 }
 
-main{
+main {
     min-height: 100%;
+}
+
+.navigation {
+    position: relative;
+}
+
+.arrows-nav {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    color: #1d1a5b;
+    font-size: 28px;
+}
+.arrows-nav svg{
+    transition: all .1s ease;
+    cursor: pointer;
+}
+.arrows-nav svg:hover{
+    transform: scale(120%)
 }
 
 .container-left,
