@@ -15,10 +15,6 @@
     transition: box-shadow .2s ease;
 }
 
-/* .card:hover {
-    box-shadow: 0 0 20px rgba(111, 106, 248, 0.3);
-} */
-
 .card .header-card {
     display: flex;
     justify-content: space-between;
@@ -136,49 +132,46 @@
     min-width: 500px;
     max-width: 500px;
     margin: 0 auto;
+    transition: all .2s ease;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.container-bot {
+    min-height: 100%;
+}
 
 
 
 @media (max-width: 1200px) {
     .grid-cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container-left {
+        margin: 0;
+    }
+
+    .container-mid {
+        flex-direction: column;
+    }
+
+    .bg-grafico {
+        display: flex;
+        min-width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .container-bot {
+        margin-top: 50px;
+    }
+
+    .container-mid .historico-empresa {
+        margin: 0;
+    }
+
+    .container-mid .historico-empresa .card {
+        display: none;
+        min-width: 100%;
+        max-width: 100%;
     }
 }
 

@@ -10,16 +10,16 @@ import { Chart } from "react-google-charts";
 
 
 export const data = [
-    ["Year", "Sales", "Expenses"],
-    ["2004", 1000, 400],
-    ["2005", 1170, 460],
-    ["2006", 660, 1120],
-    ["2007", 1030, 540],
+    ["Ano", "Ligações"],
+    ["2019", 500],
+    ["2020", 650],
+    ["2021", 1200],
+    ["2022", 900],
 ];
 
 
 export const options = {
-    title: "Company Performance",
+    title: "Ligações por ano",
     curveType: "function",
     legend: { position: "bottom" },
     backgroundColor: 'transparent',
@@ -42,7 +42,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="content-card">
-                        <h3>Sempre Internet</h3>
+                        <h3>ABC TELECOM</h3>
                     </div>
                 </div>
 
@@ -117,6 +117,12 @@ export const Home = () => {
                                 options={options}
                             />
                         </div>
+                    </div>
+                </div>
+
+                <div className="container-bot">
+                    <div className="">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eaque provident, minus architecto quas enim nam debitis, quae nesciunt aliquid asperiores porro praesentium similique harum iste ab impedit tempore voluptate!
                     </div>
                 </div>
             </div>

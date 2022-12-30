@@ -6,6 +6,10 @@
     overflow: hidden;
 }
 
+main{
+    min-height: 100%;
+}
+
 .container-left,
 .container-right {
     padding: 20px;
@@ -26,6 +30,7 @@
     flex: 1;
     background-color: #E9ECF4;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 @media (max-height: 600px) {
